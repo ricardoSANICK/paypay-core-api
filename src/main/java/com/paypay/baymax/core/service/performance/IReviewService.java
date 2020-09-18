@@ -12,5 +12,6 @@ public interface IReviewService extends IGenericService<TReview, Long, ReviewDTO
 	public ReviewType updateReview(ReviewType review);
 	public ReviewListType getAllReviews();
 	public ReviewType getReviewById(Long id);
+	public void disableReviewById(Long id);
 
 }

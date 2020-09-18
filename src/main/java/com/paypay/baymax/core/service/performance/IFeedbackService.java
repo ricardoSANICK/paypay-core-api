@@ -12,5 +12,6 @@ public interface IFeedbackService extends IGenericService<TFeedback, Long, Feedb
 	public FeedbackType updateFeedback(FeedbackType feedback);
 	public FeedbackListType getAllFeedbacks();
 	public FeedbackType getFeedbackById(Long id);
+	public void disableFeedbackById(Long id);
 
 }

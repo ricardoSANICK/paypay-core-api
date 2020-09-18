@@ -12,5 +12,6 @@ public interface IEmployeeService extends IGenericService<TEmployee, Long, Emplo
 	public EmployeeType updateEmployee(EmployeeType employee);
 	public EmployeeListType getAllEmployees();
 	public EmployeeType getEmployeeById(Long id);
+	public void disableEmployeeById(Long id);
 
 }

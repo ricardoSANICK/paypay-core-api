@@ -1,0 +1,32 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.paypay.baymax.core.hibernate.DataSourceSQLProps",
+      "name": "com.paypay.baymax.config.mssql.datasource",
+      "type": "com.paypay.baymax.core.hibernate.DataSourceSQLProps"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.paypay.baymax.core.hibernate.DataSourceSQLProps",
+      "name": "com.paypay.baymax.config.mssql.datasource.driver-class-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.paypay.baymax.core.hibernate.DataSourceSQLProps",
+      "name": "com.paypay.baymax.config.mssql.datasource.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.paypay.baymax.core.hibernate.DataSourceSQLProps",
+      "name": "com.paypay.baymax.config.mssql.datasource.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.paypay.baymax.core.hibernate.DataSourceSQLProps",
+      "name": "com.paypay.baymax.config.mssql.datasource.username",
+      "type": "java.lang.String"
+    }
+  ]
+}

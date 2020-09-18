@@ -1,5 +1,6 @@
 package com.paypay.baymax.core.service.catalog;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -65,6 +66,20 @@ public class EmployeeService extends GenericServiceImpl<TEmployee, Long, Employe
 			e.printStackTrace();
 		}
 		return employeeType;
+	}
+
+	@Override
+	@Transactional
+	public void disableEmployeeById(Long id) {
+		try {
+			TEmployee tEmployee = this.get(id);
+			tEmployee.setUpdateDate(new Date());
+			tEmployee.setUpdateUsername("Admin");
+			tEmployee.setStatus(false);
+			this.update(tEmployee);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

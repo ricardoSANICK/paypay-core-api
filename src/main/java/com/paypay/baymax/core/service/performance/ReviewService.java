@@ -1,5 +1,6 @@
 package com.paypay.baymax.core.service.performance;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -65,6 +66,20 @@ public class ReviewService extends GenericServiceImpl<TReview, Long, ReviewDTO> 
 			e.printStackTrace();
 		}
 		return reviewType;
+	}
+
+	@Override
+	@Transactional
+	public void disableReviewById(Long id) {
+		try {
+			TReview tReview = this.get(id);
+			tReview.setUpdateDate(new Date());
+			tReview.setUpdateUsername("Admin");
+			tReview.setStatus(false);
+			this.update(tReview);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

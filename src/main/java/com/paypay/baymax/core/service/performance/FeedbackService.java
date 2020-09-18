@@ -1,5 +1,6 @@
 package com.paypay.baymax.core.service.performance;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -64,6 +65,21 @@ public class FeedbackService extends GenericServiceImpl<TFeedback, Long, Feedbac
 			e.printStackTrace();
 		}
 		return feedbackType;
+	}
+
+	@Override
+	@Transactional
+	public void disableFeedbackById(Long id) {
+		try {
+			TFeedback tFeedback = this.get(id);
+			tFeedback.setUpdateDate(new Date());
+			tFeedback.setUpdateUsername("Admin");
+			tFeedback.setStatus(false);
+			this.update(tFeedback);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

@@ -47,8 +47,12 @@ public class EmployeeApiController implements EmployeeApi {
 	@Override
 	public ResponseEntity<Void> disable(
 			@ApiParam(value = "Employee ID",required=true) @PathVariable("id") Long id) {
-		String accept = request.getHeader("Accept");
-		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+		try {
+			this.employeeService.disableEmployeeById(id);
+		} catch (Exception e) {
+			
+		}
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
 	@Override
@@ -59,8 +63,6 @@ public class EmployeeApiController implements EmployeeApi {
 			EmployeeListType employeeListType = this.employeeService.getAllEmployees();
 			operEmployeeListAllType.setEmployees(employeeListType);
 		} catch (Exception e) {
-			
-		} finally {
 			
 		}
 		return ResponseEntity.ok().body(operEmployeeListAllType);
@@ -74,8 +76,6 @@ public class EmployeeApiController implements EmployeeApi {
 			EmployeeType employeeType = this.employeeService.getEmployeeById(id);
 			operEmployeeAllType.setEmployee(employeeType);
 		} catch (Exception e) {
-			
-		} finally {
 			
 		}
 		return ResponseEntity.ok().body(operEmployeeAllType);

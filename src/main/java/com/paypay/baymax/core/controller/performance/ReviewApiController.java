@@ -41,8 +41,12 @@ public class ReviewApiController implements ReviewApi {
 	@Override
 	public ResponseEntity<Void> disable(
 			@ApiParam(value = "Review ID",required=true) @PathVariable("id") Long id) {
-		String accept = request.getHeader("Accept");
-		return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+		try {
+			this.reviewService.disableReviewById(id);
+		} catch (Exception e) {
+			
+		}
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
 	@Override
